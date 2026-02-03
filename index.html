@@ -3,158 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>薇璽生技有限公司 | 保健食品 OEM/ODM 專家</title>
+    <title>薇璽生技有限公司 | 保健食品 OEM/ODM 專業代工研發</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
+        
+        /* 自定義樣式 */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.8; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(22, 101, 52, 0.1);
+        }
+
+        .contact-btn {
+            background-color: #166534;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #15803d;
+        }
     </style>
 </head>
-<body class="text-gray-800 bg-white">
+<body class="text-gray-800">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-green-700 flex items-center">
-                <i class="fas fa-microscope mr-2"></i> 薇璽生技
+            <div class="text-2xl font-bold text-green-800 flex items-center">
+                <i class="fas fa-leaf mr-2 text-green-600"></i> 薇璽生技
             </div>
             <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#about" class="hover:text-green-600 transition">關於我們</a>
-                <a href="#services" class="hover:text-green-600 transition">核心業務</a>
-                <a href="#process" class="hover:text-green-600 transition">服務流程</a>
-                <a href="#contact" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition">立即諮詢</a>
+                <a href="#about" class="hover:text-green-600">關於我們</a>
+                <a href="#services" class="hover:text-green-600">核心業務</a>
+                <a href="#strength" class="hover:text-green-600">研發實力</a>
+                <a href="mailto:coco334165@gmail.com" class="text-green-700 font-bold border-b-2 border-green-700">立即諮詢</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero-gradient py-20 px-6">
+    <section id="about" class="hero-gradient py-20 px-6">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <span class="text-green-600 font-bold tracking-widest text-sm uppercase">Professional OEM/ODM Service</span>
-                <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
-                    協助品牌客戶打造<br><span class="text-green-600">具競爭力</span>的高品質保健食品
+            <div class="md:w-3/5 mb-12 md:mb-0">
+                <div class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-bold mb-4">
+                    專業保健食品 OEM / ODM / 客製化研發
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+                    打造具市場競爭力的<br><span class="text-green-700">高品質健康產品</span>
                 </h1>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    提供從產品概念到量產上市的一站式服務。以「專業研發、品質為本、長期合作」為核心，成為您品牌背後最值得信賴的夥伴。
+                <p class="text-lg text-gray-600 mb-8 max-w-xl">
+                    致力於協助品牌客戶從產品概念到量產上市。我們以「專業研發、品質為本、長期合作」為核心理念，提供一站式代工服務，協助您降低開發成本。
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#services" class="bg-green-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-green-700 transition">了解服務</a>
-                    <a href="#contact" class="border border-green-600 text-green-600 px-8 py-3 rounded-lg hover:bg-green-50 transition">聯絡我們</a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:coco334165@gmail.com" class="contact-btn text-white px-8 py-3 rounded-lg shadow-md font-bold">
+                        聯絡諮詢
+                    </a>
+                    <a href="#services" class="bg-white border border-gray-300 px-8 py-3 rounded-lg shadow-sm hover:bg-gray-50 font-bold">
+                        了解服務項目
+                    </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-72 h-72 md:w-96 md:h-96 bg-white rounded-full flex items-center justify-center shadow-2xl border-8 border-green-50">
-                    <i class="fas fa-pills text-9xl text-green-200"></i>
-                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-md animate-bounce">🧪 專業研發</div>
-                    <div class="absolute bottom-10 -left-10 bg-white p-4 rounded-xl shadow-md">✅ 品質保證</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">核心業務與定位</h2>
-            <div class="w-20 h-1 bg-green-500 mx-auto mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
-                    <div class="text-green-500 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-xl font-bold mb-3">趨勢分析</h3>
-                    <p class="text-gray-500 text-sm">市場趨勢觀察與精確的產品定位建議。</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
-                    <div class="text-green-500 text-3xl mb-4"><i class="fas fa-vial"></i></div>
-                    <h3 class="text-xl font-bold mb-3">配方研發</h3>
-                    <p class="text-gray-500 text-sm">功能性原料評估與專屬客製化配方設計。</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
-                    <div class="text-green-500 text-3xl mb-4"><i class="fas fa-industry"></i></div>
-                    <h3 class="text-xl font-bold mb-3">製造代工</h3>
-                    <p class="text-gray-500 text-sm">提供膠囊、錠劑、粉包、飲品等多元劑型。</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
-                    <div class="text-green-500 text-3xl mb-4"><i class="fas fa-check-circle"></i></div>
-                    <h3 class="text-xl font-bold mb-3">法規輔導</h3>
-                    <p class="text-gray-500 text-sm">包裝整合與相關法規諮詢，縮短上市時程。</p>
-                </div>
+            <div class="md:w-2/5 relative">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Biotech Research" class="rounded-2xl shadow-2xl">
             </div>
         </div>
     </section>
 
-    <section class="py-20">
+    <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <img src="https://images.unsplash.com/photo-1579154273151-09d1844ad7c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="研發實驗室" class="rounded-3xl shadow-lg">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">核心業務與定位</h2>
+                <p class="text-gray-500">專注於配方研發與代工製造，提供最精準的市場解決方案</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">研發與定位</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">市場趨勢分析、功能性原料評估與專屬配方設計。</p>
                 </div>
-                <div class="md:w-1/2 md:pl-16">
-                    <h2 class="text-3xl font-bold mb-6 italic">🔬 專業研發與製造實力</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        我們結合研發顧問、營養專業背景與製造端經驗，建立完整的產品開發流程。從原料選用、安全性評估到製程穩定度控管，皆以高規格標準執行。
-                    </p>
+                
+                <div class="service-card p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">代工製造</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">OEM / ODM 生產製造，確保每一批次的穩定度與安全性。</p>
+                </div>
+                
+                <div class="service-card p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fas fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">整合規劃</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">劑型規劃、包裝設計整合及相關法規諮詢服務。</p>
+                </div>
+                
+                <div class="service-card p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">快速上市</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">提供貼牌上市方案，協助新創品牌有效縮短開發時程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strength" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6 italic text-green-800">🔬 研發與製造實力</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    薇璽生技結合研發顧問、營養專業背景與製造端經驗，建立完整的產品開發流程。我們可配合多樣化市場需求，提供穩定且具差異化的劑型方案。
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i> 膠囊食品
+                    </div>
+                    <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i> 錠劑加工
+                    </div>
+                    <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i> 功能粉包
+                    </div>
+                    <div class="flex items-center p-3 bg-white rounded-lg shadow-sm">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i> 機能性飲品
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border-t-4 border-green-600">
+                    <div class="text-3xl font-bold text-green-700 mb-1">品質</div>
+                    <p class="text-sm text-gray-500 font-medium">嚴選頂級原料</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border-t-4 border-green-600">
+                    <div class="text-3xl font-bold text-green-700 mb-1">研發</div>
+                    <p class="text-sm text-gray-500 font-medium">市場核心導向</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border-t-4 border-green-600">
+                    <div class="text-3xl font-bold text-green-700 mb-1">彈性</div>
+                    <p class="text-sm text-gray-500 font-medium">客製化生產模組</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border-t-4 border-green-600">
+                    <div class="text-3xl font-bold text-green-700 mb-1">保密</div>
+                    <p class="text-sm text-gray-500 font-medium">完善資訊保護</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                <div class="mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">薇璽生技有限公司</h2>
+                    <p class="text-gray-400 max-w-sm">您品牌背後最值得信賴的研發與製造夥伴，共同開創健康產業的新價值。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">聯絡我們</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-caret-right text-green-500 mr-2"></i> 多元劑型：膠囊、錠劑、粉包、機能性飲品
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-envelope mr-3 text-green-500"></i>
+                            <a href="mailto:coco334165@gmail.com" class="hover:text-white underline decoration-green-500">coco334165@gmail.com</a>
                         </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-caret-right text-green-500 mr-2"></i> 快速貼牌上市方案，降低新創試錯成本
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-caret-right text-green-500 mr-2"></i> 高度保密機制，保護客戶商業配方
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-map-marker-alt mr-3 text-green-500"></i>
+                            <span>台灣生技研發中心</span>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-green-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">為什麼選擇 薇璽生技？</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="text-4xl font-bold text-green-400 mb-2">01</div>
-                    <h4 class="text-xl font-bold mb-2">品質導向</h4>
-                    <p class="text-green-100 text-sm">嚴選原料、重視安全</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-green-400 mb-2">02</div>
-                    <h4 class="text-xl font-bold mb-2">研發核心</h4>
-                    <p class="text-green-100 text-sm">拒絕制式配方，追求差異化</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-green-400 mb-2">03</div>
-                    <h4 class="text-xl font-bold mb-2">彈性合作</h4>
-                    <p class="text-green-100 text-sm">適應各種規模的開發需求</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-green-400 mb-2">04</div>
-                    <h4 class="text-xl font-bold mb-2">互信夥伴</h4>
-                    <p class="text-green-100 text-sm">長期的策略合作關係</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-gray-100 py-16 px-6">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">啟動您的品牌計畫</h2>
-            <p class="text-gray-600 mb-10 max-w-2xl mx-auto">
-                無論是新創品牌或是既有產品線擴充，薇璽生技都能提供最專業的代工與研發建議。歡迎與我們聯繫。
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12">
-                <div class="flex items-center">
-                    <i class="fas fa-envelope text-green-600 mr-2"></i>
-                    <span>contact@vacybiotech.com.tw</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>
-                    <span>台灣生技研發中心</span>
-                </div>
-            </div>
-            <div class="border-t border-gray-200 pt-8 mt-8 text-gray-500 text-sm">
-                &copy; 2026 薇璽生技有限公司 Vacy Biotech Co., Ltd. 版權所有
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 薇璽生技有限公司 Vacy Biotech Co., Ltd. 版權所有</p>
             </div>
         </div>
     </footer>
