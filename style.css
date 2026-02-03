@@ -1,85 +1,87 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Noto Sans TC", "PingFang TC", sans-serif;
-  color: #1f2933;
-  line-height: 1.8;
-  background: #ffffff;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
 }
 
 /* Layout */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 24px;
 }
 
-.narrow {
-  max-width: 760px;
+.container.narrow {
+  max-width: 800px;
 }
 
 .section {
-  padding: 96px 0;
+  padding: 100px 0;
 }
 
 .section.gray {
-  background: #f6f8fb;
+  background: #f5f7fa;
+}
+
+.section.dark {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  margin: 0 0 20px;
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 /* Header */
-.site-header {
+.header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #eee;
   z-index: 100;
 }
 
-.header-flex {
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 72px;
 }
 
-.brand {
-  font-size: 18px;
+.logo {
   font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.brand span {
-  font-weight: 400;
-  font-size: 14px;
-  margin-left: 8px;
-  color: #6b7280;
+  font-size: 18px;
 }
 
 .nav a {
   margin-left: 28px;
   text-decoration: none;
-  color: #1f2933;
-  font-size: 14px;
-  letter-spacing: 0.08em;
+  color: #1a1a1a;
 }
 
-.btn-nav {
-  border: 1px solid #1f2933;
-  padding: 8px 14px;
+.nav .btn {
+  padding: 8px 16px;
+  border: 1px solid #1a1a1a;
 }
 
 /* Hero */
 .hero {
-  height: 88vh;
-  background-image: url("https://images.unsplash.com/photo-1581092160607-ee67a1b3b8f7");
-  background-size: cover;
-  background-position: center;
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1581093588401-22d62a5d1b7f") center/cover no-repeat;
   position: relative;
   margin-top: 72px;
 }
@@ -92,89 +94,92 @@ body {
 
 .hero-content {
   position: relative;
+  color: #fff;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #ffffff;
+  align-items: center;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 44px;
-  letter-spacing: 0.12em;
-  margin-bottom: 20px;
+  font-size: 48px;
+  max-width: 800px;
 }
 
 .hero p {
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  opacity: 0.9;
+  font-size: 18px;
 }
 
-/* Titles */
-h2 {
-  font-size: 28px;
-  letter-spacing: 0.12em;
-  margin-bottom: 40px;
-}
-
-/* Cards */
+/* Grid */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
-.card {
-  background: #ffffff;
-  padding: 40px 32px;
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card, .info-box {
+  background: #fff;
+  padding: 36px;
   border: 1px solid rgba(0,0,0,0.08);
 }
 
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 16px;
-  letter-spacing: 0.08em;
-}
-
-.card p {
-  font-size: 15px;
-  letter-spacing: 0.06em;
+.card h3, .info-box h3 {
+  font-size: 20px;
 }
 
 /* Process */
 .process {
-  list-style: decimal;
-  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.process li {
-  margin-bottom: 14px;
-  font-size: 15px;
+.step {
+  width: 18%;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
 }
 
 /* Contact */
-.contact-mail {
-  font-size: 18px;
-  margin-top: 16px;
+.contact-email {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Footer */
 .footer {
-  padding: 32px 0;
+  padding: 40px;
   text-align: center;
-  font-size: 13px;
-  color: #6b7280;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #000;
+  color: #aaa;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .grid-3 {
+  .grid-3, .grid-2 {
     grid-template-columns: 1fr;
   }
 
+  .process {
+    flex-direction: column;
+  }
+
+  .step {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
   .hero h1 {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
