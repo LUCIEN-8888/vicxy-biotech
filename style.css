@@ -1,86 +1,181 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-  color: #222;
+/* ========== Base ========== */
+* {
+  box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: #222;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
   background: #fff;
+}
+
+/* ========== Header ========== */
+.header {
   position: sticky;
   top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 24px;
   text-decoration: none;
   color: #222;
+  font-size: 15px;
 }
 
-.btn {
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav .btn {
+  padding: 6px 14px;
   border: 1px solid #222;
-  padding: 8px 14px;
+  border-radius: 20px;
 }
 
+/* ========== Hero ========== */
 .hero {
-  background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("images/hero.jpg") center / cover no-repeat;
   color: #fff;
-  padding: 140px 32px;
+  padding: 140px 40px;
   text-align: center;
 }
 
 .hero h1 {
   font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ========== Section ========== */
 .section {
-  padding: 80px 40px;
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 17px;
+  color: #444;
 }
 
 .gray {
   background: #f6f6f6;
 }
 
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
+/* ========== Grid & Card ========== */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.card, .tag {
+.card {
   background: #fff;
-  padding: 30px;
+  padding: 36px 30px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  text-align: left;
 }
 
-.process li {
-  margin-bottom: 15px;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,.12);
 }
 
-.contact input,
-.contact textarea {
+.card img {
   width: 100%;
-  margin-bottom: 12px;
-  padding: 12px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
 }
 
-.btn-primary {
-  background: #111;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
 }
 
+.card p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* ========== Contact ========== */
+#contact p {
+  font-size: 16px;
+}
+
+#contact a {
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Footer ========== */
 .footer {
   background: #111;
   color: #fff;
   text-align: center;
-  padding: 30px;
+  padding: 24px;
+  font-size: 14px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 12px;
+  }
+
+  .hero {
+    padding: 100px 24px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 70px 24px;
+  }
 }
