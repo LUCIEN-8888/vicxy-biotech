@@ -1,179 +1,165 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Helvetica Neue", "PingFang TC", "Noto Sans TC", sans-serif;
 }
 
 body {
-  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC",
+               "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+  color: #222;
   line-height: 1.8;
   background: #fff;
 }
 
 /* Header */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.9);
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 24px;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 40px;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
-  font-weight: 600;
   font-size: 20px;
-  letter-spacing: 1px;
+  font-weight: 700;
 }
 
-.nav a {
-  margin-left: 28px;
+.logo span {
+  font-weight: 400;
+  color: #666;
+  margin-left: 6px;
+}
+
+nav a {
+  margin-left: 24px;
   text-decoration: none;
-  color: #111;
-  font-size: 14px;
+  color: #333;
+  font-weight: 500;
 }
 
-.nav .btn {
-  padding: 8px 16px;
-  border: 1px solid #111;
+nav a:hover {
+  color: #000;
+}
+
+.btn {
+  border: 1px solid #222;
+  padding: 6px 14px;
 }
 
 /* Hero */
 .hero {
-  height: 100vh;
-  background: url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b") center/cover no-repeat;
-  position: relative;
+  height: 85vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
   display: flex;
   align-items: center;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-
 .hero-content {
-  position: relative;
+  max-width: 900px;
+  padding: 0 40px;
   color: #fff;
-  max-width: 1200px;
-  padding: 0 24px;
-  margin: auto;
 }
 
 .hero h1 {
-  font-size: 56px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
-  opacity: 0.9;
+  font-size: 20px;
+  opacity: 0.95;
 }
 
 /* Sections */
 .section {
-  padding: 120px 24px;
-}
-
-.section.gray {
-  background: #f7f7f7;
-}
-
-.container {
+  padding: 100px 40px;
   max-width: 1200px;
   margin: auto;
 }
 
-.container.narrow {
-  max-width: 800px;
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.section-title {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 60px;
+.section-desc {
+  text-align: center;
+  color: #666;
+  max-width: 720px;
+  margin: 0 auto 60px;
 }
 
-/* Intro */
-.intro {
-  padding: 120px 24px;
-  background: #fff;
+.gray {
+  background: #f6f7f9;
 }
 
-.intro p {
-  font-size: 18px;
-  margin-bottom: 24px;
-}
-
-/* Grid */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.card {
-  background: #fff;
-  padding: 40px;
-  border: 1px solid #eee;
-}
-
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 15px;
-  color: #555;
-}
-
-/* Contact */
-.contact {
-  padding: 120px 24px;
+.dark {
   background: #111;
   color: #fff;
   text-align: center;
 }
 
-.contact h2 {
-  font-size: 36px;
-  margin-bottom: 24px;
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
 }
 
-.contact p {
+.card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.gray .card {
+  background: #fff;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: #555;
+}
+
+/* Contact */
+.contact-email {
+  margin-top: 20px;
   font-size: 18px;
 }
 
 /* Footer */
 .footer {
-  padding: 24px;
   text-align: center;
-  font-size: 13px;
+  padding: 30px;
+  font-size: 14px;
   background: #000;
   color: #aaa;
 }
 
 /* Mobile */
-@media (max-width: 900px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 34px;
   }
 
-  .hero h1 {
-    font-size: 40px;
+  nav a {
+    margin-left: 14px;
+    font-size: 14px;
   }
 }
