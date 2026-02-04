@@ -3,29 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>嚴選素材介紹 - 薇璽生技</title>
+    <title>嚴選素材百科 | 薇璽生技 - 全球頂級原料供應與研發</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #ffffff; color: #334155; }
+        .gradient-text { background: linear-gradient(135deg, #15803d 0%, #166534 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-pattern { background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px); background-size: 20px 20px; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid #f1f5f9; }
+        .spec-card { border-left: 4px solid #15803d; transition: all 0.3s ease; }
+        .spec-card:hover { background-color: #f0fdf4; transform: translateX(5px); }
+    </style>
 </head>
-<body class="bg-white text-slate-800">
-    <nav class="p-6 border-b"><a href="index.html" class="text-green-700 font-bold">← 返回首頁</a></nav>
-    <div class="container mx-auto px-6 py-12 max-w-3xl">
-        <h1 class="text-4xl font-black mb-8">嚴選素材</h1>
-        
-        <div class="space-y-12">
-            <section>
-                <h2 class="text-2xl font-bold text-green-700 mb-4">天然發酵酵母</h2>
-                <p class="leading-relaxed text-slate-600">我們採用國際級專利酵母，富含天然維生素 B 群與多種微量元素。透過特殊發酵技術，保留最高生物利用率，是保健食品的黃金基底。</p>
-            </section>
-            
-            <section>
-                <h2 class="text-2xl font-bold text-green-700 mb-4">全方位成份清單</h2>
-                <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                    <li>專利魚油：rTG 型態高品質吸收。</li>
-                    <li>多層包埋益生菌：耐胃酸，直達腸道。</li>
-                    <li>水解膠原蛋白：極致小分子好吸收。</li>
-                </ul>
-            </section>
+<body class="bg-pattern">
+
+    <nav class="glass-nav fixed w-full z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-green-800 font-bold group">
+                <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> 返回官方首頁
+            </a>
+            <div class="text-xs tracking-widest font-bold text-slate-400 uppercase">Ingredient Encyclopedia</div>
         </div>
-    </div>
+    </nav>
+
+    <header class="pt-32 pb-16 px-6 bg-white">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h1 class="text-4xl lg:text-5xl font-black text-slate-900 mb-6">嚴選素材百科</h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                薇璽生技堅持「科學實證」與「溯源管理」。我們在全球範圍內篩選具備臨床實驗支撐的頂級原料，確保每一份配方都能發揮最大體感。
+            </p>
+        </div>
+    </header>
+
+    <section class="py-16 px-6 container mx-auto max-w-5xl">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-1 sticky top-32">
+                <div class="text-6xl mb-4">🔬</div>
+                <h2 class="text-3xl font-black text-green-800 mb-4">專利發酵<br>酵母系列</h2>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                    我們採用非基因改造（Non-GMO）天然發酵技術，提供高生物利用率的營養補充解決方案。
+                </p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">天然來源</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">高吸收率</span>
+                </div>
+            </div>
+            <div class="lg:col-span-2 space-y-8">
+                <div class="spec-card bg-white p-6 rounded-r-2xl shadow-sm">
+                    <h3 class="font-black text-xl mb-2 text-slate-800">天然酵母維生素 B 群</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        與合成維生素不同，酵母 B 群與蛋白質及纖維結合，在人體內的停留時間更長，吸收率提升約 25-40%。包含 B1, B2, B6, B12, 菸鹼酸, 葉酸等完整營養。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-xs font-bold text-slate-400">
+                        <span>● 原料地：歐洲/法國</span>
+                        <span>● 應用：提神、代謝提升</span>
+                    </div>
+                </div>
+                <div class="spec-card bg-white p-6 rounded-r-2xl shadow-sm">
+                    <h3 class="font-black text-xl mb-2 text-slate-800">富鉻/富鋅/富硒酵母</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        透過發酵技術將無機微量元素轉化為有機態，大幅降低身體負擔，針對血糖管理、男性保健、免疫調節提供強效支援。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-xs font-bold text-slate-400">
+                        <span>● 特色：有機礦物質轉化</span>
+                        <span>● 應用：生理機能調整</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl font-black mb-4">全球嚴選五大黃金成份</h2>
+                    <p class="text-slate-400">薇璽生技代工最常被指定的明星原料規格。</p>
+                </div>
+                <div class="text-green-500 font-bold text-sm tracking-widest">GLOBAL SOURCING</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border-t border-slate-700 pt-6">
+                    <span class="text-green-500 font-black text-2xl">01</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">rTG 專利深海魚油</h4>
+                    <ul class="text-sm text-slate-400 space-y-2">
+                        <li>● 高達 80% 以上 Omega-3 濃度</li>
+                        <li>● 專利超臨界 CO2 萃取技術</li>
+                        <li>● IFOS 五星認證與無重金屬殘留</li>
+                    </ul>
+                </div>
+                <div class="border-t border-slate-700 pt-6">
+                    <span class="text-green-500 font-black text-2xl">02</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">FloraGLO® 葉黃素</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        全球公認最強游離型葉黃素，分子小、吸收快，搭配玉米黃素金黃比例 5:1，守護數位時代的明亮。
+                    </p>
+                </div>
+                <div class="border-t border-slate-700 pt-6">
+                    <span class="text-green-500 font-black text-2xl">03</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">多層包埋 15 菌益生菌</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        獨家三層包埋技術（耐酸、耐鹽、定殖），保證效期內含菌量，並添加複方益萃質提升定殖力。
+                    </p>
+                </div>
+                <div class="border-t border-slate-700 pt-6">
+                    <span class="text-green-500 font-black text-2xl">04</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">PO·OG 膠原蛋白胜肽</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        來自日本第一大廠，二胜肽成分精準傳達信號，實驗證實對肌膚支撐與關節靈活有顯著功效。
+                    </p>
+                </div>
+                <div class="border-t border-slate-700 pt-6">
+                    <span class="text-green-500 font-black text-2xl">05</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">美國專利苦瓜胜肽</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        穩定代謝循環的利器，採用特殊萃取保留高活性胜肽序列，是控糖與代謝產品的首選原料。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white px-6">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-2xl font-black text-slate-900 mb-12">原料品質管理標準</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-certificate text-4xl mb-3 text-green-700"></i>
+                    <span class="text-xs font-bold">HALAL 認證</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-shield-alt text-4xl mb-3 text-green-700"></i>
+                    <span class="text-xs font-bold">SGS 檢驗合格</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-flask text-4xl mb-3 text-green-700"></i>
+                    <span class="text-xs font-bold">ISO 22000</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-check-double text-4xl mb-3 text-green-700"></i>
+                    <span class="text-xs font-bold">HACCP 規範</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 py-16 px-6 border-t border-slate-200">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h3 class="text-xl font-black text-slate-800 mb-4">對原料有更具體的規格需求？</h3>
+            <p class="text-slate-500 mb-8 text-sm">我們的研發團隊能根據您的預算與目標客群，量身推薦最適合的原料組合。</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="bg-[#06C755] text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:shadow-lg transition">
+                    <i class="fab fa-line text-xl"></i> LINE 線上諮詢
+                </a>
+                <a href="mailto:coco334165@gmail.com" class="bg-slate-800 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:shadow-lg transition">
+                    <i class="fas fa-envelope"></i> Email 索取報價
+                </a>
+            </div>
+            <p class="mt-12 text-[10px] text-slate-300 tracking-[0.3em]">VACY BIOTECH INGREDIENTS DIVISION</p>
+        </div>
+    </footer>
+
 </body>
 </html>
