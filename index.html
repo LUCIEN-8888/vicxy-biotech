@@ -3,98 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>薇璽生技有限公司 | Vacy Biotech</title>
+    <title>薇璽生技有限公司 | 專業保健食品 OEM/ODM 一站式代工服務</title>
+    
+    <meta name="description" content="薇璽生技致力於高品質保健食品研發，提供益生菌、魚油、膠原蛋白等多元劑型代工，從原料嚴選到成品生產，為您的品牌提供最強後盾。">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f0f7f4; }
-        .hero-gradient { background: linear-gradient(135deg, #166534 0%, #064e3b 100%); }
-        .item-row { transition: all 0.3s ease; }
-        .item-row:hover { transform: translateX(10px); background-color: #f8fafc; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        
+        :root {
+            --primary-dark: #064e3b;
+            --primary-green: #15803d;
+            --accent-green: #22c55e;
+        }
+
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(6, 78, 59, 0.95)), 
+                        url('https://images.unsplash.com/photo-1579154273151-09d1844ad7c5?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .item-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e2e8f0;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-green);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-green);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero-gradient text-white pt-20 pb-16 px-6 shadow-xl">
-        <div class="container mx-auto max-w-4xl text-center">
-            <div class="inline-block bg-green-500/20 px-4 py-1 rounded-full text-green-300 text-sm font-bold mb-4 tracking-widest uppercase">Professional Biotech</div>
-            <h1 class="text-4xl lg:text-5xl font-black mb-6">薇璽生技有限公司</h1>
-            <p class="text-green-100 text-lg leading-relaxed max-w-2xl mx-auto mb-8 opacity-90">
-                致力於保健食品配方研發與代工製造，提供從原料嚴選到成品生產的一站式專業服務，是您品牌成長的最強後盾。
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-6 text-sm">
-                <a href="mailto:coco334165@gmail.com" class="flex items-center gap-2 hover:text-green-300 transition">
-                    <i class="fas fa-envelope text-green-400"></i> coco334165@gmail.com
-                </a>
-                <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="flex items-center gap-2 hover:text-green-300 transition">
-                    <i class="fab fa-line text-green-400 text-lg"></i> LINE 快速聯繫
-                </a>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-leaf text-green-700 text-2xl"></i>
+                <span class="text-xl font-black tracking-tighter text-slate-800">薇璽生技 <span class="text-green-700 underline decoration-green-300">VACY</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="#about" class="hover:text-green-700 transition">關於薇璽</a>
+                <a href="#products" class="hover:text-green-700 transition">生產項目</a>
+                <a href="#process" class="hover:text-green-700 transition">合作流程</a>
+                <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800 transition">立即諮詢</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white pt-48 pb-32 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-green-400 font-bold tracking-[0.3em] mb-4 text-sm uppercase">Innovation & Excellence</h2>
+                    <h1 class="text-5xl lg:text-6xl font-black leading-tight mb-8">
+                        深耕生技研發<br>成就您的品牌價值
+                    </h1>
+                    <p class="text-lg text-green-50/80 leading-relaxed mb-10">
+                        薇璽生技不僅是您的代工廠，更是具備醫學背景與市場洞察力的策略夥伴。我們專注於配方極致化，協助每一項產品發揮最大體感，在競爭激烈的市場中精準突圍。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products" class="bg-white text-green-900 px-8 py-4 rounded-xl font-bold hover:bg-green-50 transition shadow-lg">瀏覽生產項目</a>
+                        <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="glass-effect text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">LINE 快速聯繫</a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 p-6 rounded-2xl glass-effect text-center">
+                            <div class="text-3xl font-black text-green-400 mb-1">100+</div>
+                            <div class="text-xs uppercase tracking-widest text-green-200/60">專業配方開發</div>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-2xl glass-effect text-center mt-8">
+                            <div class="text-3xl font-black text-green-400 mb-1">GMP</div>
+                            <div class="text-xs uppercase tracking-widest text-green-200/60">標準生產製程</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="container mx-auto px-6 py-16 max-w-3xl">
-        <h2 class="text-green-900 font-black text-2xl mb-8 border-l-4 border-green-600 pl-4">核心生產項目</h2>
-        
-        <div class="grid gap-4">
-            <a href="ingredients.html" class="item-row flex items-center justify-between bg-white p-6 rounded-2xl shadow-sm border border-green-100 group">
-                <div class="flex items-center gap-5">
-                    <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">🌿</div>
-                    <div>
-                        <span class="block text-xl font-bold text-slate-800 group-hover:text-green-700">嚴選素材</span>
-                        <span class="text-sm text-slate-400">酵母及所有成份詳細介紹</span>
+    <section id="about" class="py-24 bg-white px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl lg:text-4xl font-black text-slate-900">關於薇璽生技</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        薇璽生技創立於台灣，核心團隊由資深生技研發專家與營養師組成。我們深知保健食品市場的痛點：<strong class="text-green-700 font-bold">「配方平庸、體感不足、法規受限」</strong>。
+                    </p>
+                    <p>
+                        因此，薇璽致力於搜羅全球頂尖專利原料，結合先進的「包埋技術」與「造粒工藝」，確保每一份產品都能在消費者體內發揮最高效能。我們不追求廉價競爭，我們追求的是產品上架後的長效口碑。
+                    </p>
+                    <div class="pt-4 border-t border-slate-100 grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-2 italic">專業嚴選</h4>
+                            <p class="text-sm">僅採用經過科學實證與臨床數據支撐的頂級原料。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-2 italic">誠信代工</h4>
+                            <p class="text-sm">全程透明化管理，確保樣品與大貨品質始終如一。</p>
+                        </div>
                     </div>
                 </div>
-                <i class="fas fa-arrow-right text-slate-300 group-hover:text-green-600"></i>
-            </a>
-
-            <a href="capsules.html" class="item-row flex items-center justify-between bg-white p-6 rounded-2xl shadow-sm border border-green-100 group">
-                <div class="flex items-center gap-5">
-                    <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">💊</div>
-                    <div>
-                        <span class="block text-xl font-bold text-slate-800 group-hover:text-green-700">專業膠囊</span>
-                        <span class="text-sm text-slate-400">各類植物性與動物性膠囊介紹</span>
+                <div class="bg-slate-50 p-10 rounded-3xl border border-slate-100">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">聯絡中心</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 text-white rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Email Address</p>
+                                <p class="text-lg font-bold text-slate-700">coco334165@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-[#06C755] text-white rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fab fa-line"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Line Official</p>
+                                <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="text-lg font-bold text-green-700 hover:underline">立即添加官方好友</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <i class="fas fa-arrow-right text-slate-300 group-hover:text-green-600"></i>
-            </a>
-
-            <a href="tablets.html" class="item-row flex items-center justify-between bg-white p-6 rounded-2xl shadow-sm border border-green-100 group">
-                <div class="flex items-center gap-5">
-                    <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">⚪</div>
-                    <div>
-                        <span class="block text-xl font-bold text-slate-800 group-hover:text-green-700">專業錠劑</span>
-                        <span class="text-sm text-slate-400">膜衣錠、口含錠等生產工法</span>
-                    </div>
-                </div>
-                <i class="fas fa-arrow-right text-slate-300 group-hover:text-green-600"></i>
-            </a>
-            
-            <a href="powders.html" class="item-row flex items-center justify-between bg-white p-6 rounded-2xl shadow-sm border border-green-100 group">
-                <div class="flex items-center gap-5">
-                    <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">✨</div>
-                    <div>
-                        <span class="block text-xl font-bold text-slate-800 group-hover:text-green-700">機能粉包</span>
-                        <span class="text-sm text-slate-400">造粒技術與風味配方研發</span>
-                    </div>
-                </div>
-                <i class="fas fa-arrow-right text-slate-300 group-hover:text-green-600"></i>
-            </a>
+            </div>
         </div>
     </section>
 
-    <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="fixed bottom-8 right-8 flex items-center bg-[#06C755] text-white px-6 py-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
-        <i class="fab fa-line text-3xl mr-3"></i>
-        <div class="text-left">
-            <div class="text-[10px] opacity-80 leading-none">快 速 洽 詢</div>
-            <div class="text-lg font-black leading-none">LINE 諮詢</div>
+    <section id="products" class="py-24 bg-slate-50 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl font-black text-slate-900">核心生產項目</h2>
+                <p class="text-slate-400 mt-4">點擊下方項目查看詳細規格與製程介紹</p>
+            </div>
+            
+            <div class="space-y-4">
+                <a href="ingredients.html" class="item-card flex items-center justify-between bg-white p-8 rounded-3xl group">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-700 group-hover:text-white transition-all">🌿</div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-800 mb-1 group-hover:text-green-700 transition-colors">嚴選素材與天然酵母</h3>
+                            <p class="text-slate-400 text-sm">全方位成份分析、國際專利原料導入、天然萃取技術介紹。</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-green-700 group-hover:border-green-700 transition-all">
+                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-white"></i>
+                    </div>
+                </a>
+
+                <a href="capsules.html" class="item-card flex items-center justify-between bg-white p-8 rounded-3xl group">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-700 group-hover:text-white transition-all">💊</div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-800 mb-1 group-hover:text-green-700 transition-colors">專業膠囊充填技術</h3>
+                            <p class="text-slate-400 text-sm">植物性 HPMC 與動物性膠囊、抗潮技術、多樣化尺寸規格。</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-green-700 group-hover:border-green-700 transition-all">
+                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-white"></i>
+                    </div>
+                </a>
+
+                <a href="tablets.html" class="item-card flex items-center justify-between bg-white p-8 rounded-3xl group">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-700 group-hover:text-white transition-all">⚪</div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-800 mb-1 group-hover:text-green-700 transition-colors">精密錠劑壓製工藝</h3>
+                            <p class="text-slate-400 text-sm">膜衣錠、緩釋錠、口含錠，高度客製化形狀與口感調配。</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-green-700 group-hover:border-green-700 transition-all">
+                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-white"></i>
+                    </div>
+                </a>
+
+                <a href="powders.html" class="item-card flex items-center justify-between bg-white p-8 rounded-3xl group">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-700 group-hover:text-white transition-all">✨</div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-800 mb-1 group-hover:text-green-700 transition-colors">機能性粉包造粒</h3>
+                            <p class="text-slate-400 text-sm">高溶解性、速溶噴霧造粒、風味調整與獨家風味包覆。</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-green-700 group-hover:border-green-700 transition-all">
+                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-white"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 bg-white px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl font-black text-slate-900">一站式代工流程</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-slate-400">01</div>
+                    <h4 class="font-bold mb-2">需求洽談</h4>
+                    <p class="text-sm text-slate-500 italic">產品訴求與預算定位</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-slate-400">02</div>
+                    <h4 class="font-bold mb-2">配方研發</h4>
+                    <p class="text-sm text-slate-500 italic">提供樣品打樣與測試</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-slate-400">03</div>
+                    <h4 class="font-bold mb-2">合約簽訂</h4>
+                    <p class="text-sm text-slate-500 italic">包材設計與規格確認</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-black">04</div>
+                    <h4 class="font-bold mb-2 text-green-700">量產出貨</h4>
+                    <p class="text-sm text-slate-500 italic">嚴格品檢後準時交貨</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://line.me/ti/p/S4THqFVKxK" target="_blank" class="fixed bottom-10 right-10 group z-[9999]">
+        <div class="flex items-center gap-3 bg-[#06C755] text-white p-2 pr-6 rounded-full shadow-2xl transition-all duration-300 group-hover:pr-8">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-inner">
+                <i class="fab fa-line text-[#06C755] text-3xl"></i>
+            </div>
+            <div class="text-left leading-none">
+                <span class="text-[10px] block opacity-80 mb-1">對接專業窗口</span>
+                <span class="text-lg font-black tracking-tighter">LINE 諮詢</span>
+            </div>
         </div>
     </a>
 
-    <footer class="text-center py-12 text-slate-400 text-xs">
-        &copy; 2026 薇璽生技有限公司 Vacy Biotech Co., Ltd.
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12 border-b border-slate-800 pb-12">
+                <div>
+                    <div class="text-2xl font-black mb-4 tracking-tighter">薇璽生技 <span class="text-green-500">VACY</span></div>
+                    <p class="text-slate-400 text-sm max-w-sm">我們致力於成為大中華區最具影響力的保健食品方案提供者。品質、創新、服務是我們永不妥協的信條。</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-slate-400 mb-2">聯絡我們</p>
+                    <p class="text-2xl font-bold">coco334165@gmail.com</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 薇璽生技有限公司 Vacy Biotech Co., Ltd. 版權所有</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">服務條款</a>
+                    <a href="#" class="hover:text-white">隱私權政策</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
