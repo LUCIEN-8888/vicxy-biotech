@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         :root { --primary: #064e3b; --accent: #10b981; }
 
         @keyframes slideInUp {
@@ -20,22 +20,22 @@
         .delay-2 { animation-delay: 0.4s; }
 
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1579165466541-74e214958042?auto=format&fit=crop&q=80&w=2070');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
             border: 1px solid rgba(0,0,0,0.05);
         }
-        .glass-card:hover { transform: translateY(-12px); border-color: var(--accent); }
+        .glass-card:hover { transform: translateY(-12px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 text-slate-900">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -45,73 +45,103 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="text-xl font-black tracking-tight text-green-900 leading-none">薇璽生技</span>
-                    <span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">WEIXI BIOTECH</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase">WEIXI BIOTECH</span>
                 </div>
             </div>
             <div class="flex items-center gap-4 lg:gap-8">
-                <a href="mailto:coco334165@gmail.com" class="text-gray-500 hover:text-green-700 transition"><i class="fas fa-envelope text-lg"></i></a>
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="bg-green-700 text-white px-5 py-2.5 rounded-full text-xs font-black tracking-widest hover:bg-green-800 transition shadow-md">LINE 諮詢</a>
+                <a href="mailto:coco334165@gmail.com" class="text-gray-400 hover:text-green-700 transition"><i class="fas fa-envelope text-lg"></i></a>
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="bg-green-700 text-white px-5 py-2.5 rounded-full text-xs font-black tracking-widest hover:bg-green-800 transition shadow-md flex items-center gap-2">
+                    <i class="fab fa-line"></i> LINE 洽談
+                </a>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg min-h-screen flex items-center justify-center text-white px-6">
         <div class="max-w-5xl text-center">
-            <h2 class="animate-reveal uppercase tracking-[0.4em] text-xs font-bold mb-6 text-green-400">Professional Bioresearch & OEM</h2>
+            <h2 class="animate-reveal uppercase tracking-[0.5em] text-[10px] font-bold mb-6 text-green-400">Professional Bioresearch & OEM Center</h2>
             <h1 class="animate-reveal delay-1 text-5xl md:text-8xl font-black mb-8 leading-tight">
                 薇璽生技<br><span class="text-green-400">WEIXI</span> 精準製造
             </h1>
-            <p class="animate-reveal delay-2 text-gray-200 text-base md:text-lg max-w-2xl mx-auto mb-10 font-light">
-                醫學背景團隊坐鎮，為您的品牌提供最專業的一站式 ODM 解決方案。
+            <p class="animate-reveal delay-2 text-gray-200 text-base md:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                醫學背景團隊，為您的品牌提供最專業、一站式的 ODM 解決方案。從研發到生產，薇璽為品質把關。
             </p>
-            <div class="animate-reveal delay-2 flex flex-wrap justify-center gap-4">
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="px-10 py-4 bg-green-600 rounded-full font-black text-sm tracking-widest hover:bg-green-500 transition shadow-xl flex items-center gap-2">
-                    <i class="fab fa-line text-xl"></i> 立即 LINE 洽談
+            <div class="animate-reveal delay-2">
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="inline-flex px-10 py-4 bg-green-600 rounded-full font-black text-sm tracking-widest hover:bg-green-500 transition shadow-2xl items-center gap-3">
+                    <i class="fab fa-line text-xl"></i> 立即 LINE 顧問洽談
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-24 px-6 container mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">全劑型精密製造</h2>
-            <div class="w-16 h-1 bg-green-600 mx-auto"></div>
+    <section id="services" class="py-32 px-6 container mx-auto">
+        <div class="text-center mb-20">
+            <h3 class="text-green-600 font-bold tracking-widest text-xs uppercase mb-4">Our Expertise</h3>
+            <h2 class="text-4xl font-black text-slate-900 mb-6">全劑型精密製造解決方案</h2>
+            <div class="w-20 h-1.5 bg-green-600 mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
-            <a href="capsules.html" class="glass-card p-10 rounded-[2rem] block group">
-                <i class="fas fa-capsules text-4xl text-green-600 mb-6 block group-hover:scale-110 transition"></i>
+        <div class="grid lg:grid-cols-3 gap-10">
+            <a href="capsules.html" class="glass-card p-12 rounded-[3rem] block group relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-green-500/5 text-9xl group-hover:scale-110 transition duration-700"><i class="fas fa-capsules"></i></div>
+                <i class="fas fa-capsules text-4xl text-green-600 mb-8 block"></i>
                 <h4 class="text-2xl font-black mb-4 text-slate-800">專業膠囊填充</h4>
-                <p class="text-gray-500 text-sm mb-6">植物性 HPMC 與專利抗酸技術，確保活性成分精準釋放。</p>
-                <span class="text-xs font-black text-green-700 uppercase tracking-widest">Read More +</span>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">提供植物性 HPMC 與專利抗酸技術，確保活性成分穩定。適用於益生菌與多種營養配方。</p>
+                <div class="flex items-center gap-2 text-xs font-black text-green-700 uppercase tracking-widest">
+                    Explore Details <i class="fas fa-arrow-right ml-1 group-hover:translate-x-2 transition"></i>
+                </div>
             </a>
-            <a href="tablets.html" class="glass-card p-10 rounded-[2rem] block group">
-                <i class="fas fa-pills text-4xl text-blue-600 mb-6 block group-hover:scale-110 transition"></i>
+            <a href="tablets.html" class="glass-card p-12 rounded-[3rem] block group relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-blue-500/5 text-9xl group-hover:scale-110 transition duration-700"><i class="fas fa-pills"></i></div>
+                <i class="fas fa-pills text-4xl text-blue-600 mb-8 block"></i>
                 <h4 class="text-2xl font-black mb-4 text-slate-800">精密錠劑壓製</h4>
-                <p class="text-gray-500 text-sm mb-6">高階膜衣與緩釋工藝，提升產品口感與物理穩定度。</p>
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Read More +</span>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">高階膜衣技術與緩釋工藝，提升產品物理穩定度。針對口感與吞嚥優化的精緻設計。</p>
+                <div class="flex items-center gap-2 text-xs font-black text-blue-700 uppercase tracking-widest">
+                    Explore Details <i class="fas fa-arrow-right ml-1 group-hover:translate-x-2 transition"></i>
+                </div>
             </a>
-            <a href="powders.html" class="glass-card p-10 rounded-[2rem] block group">
-                <i class="fas fa-bolt text-4xl text-amber-500 mb-6 block group-hover:scale-110 transition"></i>
+            <a href="powders.html" class="glass-card p-12 rounded-[3rem] block group relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-amber-500/5 text-9xl group-hover:scale-110 transition duration-700"><i class="fas fa-bolt"></i></div>
+                <i class="fas fa-bolt text-4xl text-amber-500 mb-8 block"></i>
                 <h4 class="text-2xl font-black mb-4 text-slate-800">機能粉包造粒</h4>
-                <p class="text-gray-500 text-sm mb-6">流動床速溶造粒，風味屏蔽技術讓營養補充更美味。</p>
-                <span class="text-xs font-black text-amber-700 uppercase tracking-widest">Read More +</span>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">流動床速溶造粒與風味屏蔽技術。解決原料苦澀問題，讓高劑量營養補充更加美味便利。</p>
+                <div class="flex items-center gap-2 text-xs font-black text-amber-700 uppercase tracking-widest">
+                    Explore Details <i class="fas fa-arrow-right ml-1 group-hover:translate-x-2 transition"></i>
+                </div>
             </a>
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-white pt-20 pb-10 px-8">
+    <footer class="bg-slate-950 text-white pt-24 pb-12 px-8">
         <div class="container mx-auto text-center">
-            <div class="mb-10">
-                <span class="text-2xl font-black text-white">WEIXI <span class="text-green-500">BIOTECH</span></span>
-                <p class="text-gray-500 text-sm mt-4">專業、品質、誠信，您最信賴的生技研發夥伴</p>
+            <div class="mb-16 animate-reveal">
+                <div class="flex justify-center items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-black text-2xl">W</span>
+                    </div>
+                    <span class="text-3xl font-black text-white tracking-tighter">薇璽生技 <span class="text-green-500">WEIXI BIOTECH</span></span>
+                </div>
+                <p class="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">
+                    以科學為基石，以品質為承諾。我們是您品牌背後最堅實的技術支柱，共同創造極具市場競爭力的保健產品。
+                </p>
             </div>
-            <div class="flex justify-center gap-8 mb-10 text-gray-400">
-                <a href="mailto:coco334165@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope text-2xl"></i></a>
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="hover:text-white transition"><i class="fab fa-line text-2xl"></i></a>
+            
+            <div class="flex justify-center gap-6 mb-16">
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-green-600 transition group">
+                    <i class="fab fa-line text-2xl text-gray-400 group-hover:text-white"></i>
+                </a>
+                <a href="mailto:coco334165@gmail.com" class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-blue-600 transition group">
+                    <i class="fas fa-envelope text-2xl text-gray-400 group-hover:text-white"></i>
+                </a>
             </div>
-            <div class="pt-8 border-t border-white/5 text-[10px] text-gray-600 tracking-[0.2em] uppercase">
-                © 2026 WEIXI BIOTECH 薇璽生技. All Rights Reserved.
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-600 tracking-[0.3em] font-bold uppercase">
+                <div>© 2026 WEIXI BIOTECH 薇璽生技. All Rights Reserved.</div>
+                <div class="flex gap-6">
+                    <span class="hover:text-white transition cursor-pointer">Quality Control</span>
+                    <span class="hover:text-white transition cursor-pointer">R&D Lab</span>
+                    <span class="hover:text-white transition cursor-pointer">Compliance</span>
+                </div>
             </div>
         </div>
     </footer>
