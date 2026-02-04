@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>薇璽生技 WEIXI BIOTECH | 頂級保健食品研發中心</title>
+    <title>薇璽生技 WEIXI BIOTECH | 純粹科學・頂尖研發製造</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --weixi-green: #10b981; --dark-bg: #030712; --gold-accent: #d4af37; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
+        :root { --weixi-green: #10b981; --dark-bg: #030712; --glow: rgba(16, 185, 129, 0.4); }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: #f8fafc; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* --- 頂級流光進度條 --- */
-        #scroll-tracker { position: fixed; top: 0; left: 0; height: 5px; background: linear-gradient(90deg, #10b981, #34d399, #10b981); z-index: 10000; box-shadow: 0 0 15px #10b981; }
+        /* --- 高級流光進度條 --- */
+        #scroll-tracker { position: fixed; top: 0; left: 0; height: 6px; background: linear-gradient(90deg, #10b981, #34d399, #10b981); z-index: 10000; box-shadow: 0 0 20px #10b981; }
 
-        /* --- 旗艦視差首屏 --- */
-        .hero-wrap {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #000;
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 120%;
-            /* 專業萃取實驗室背景 */
-            background: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.85)), 
-                        url('https://images.unsplash.com/photo-1579152163611-2795770d35f6?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-            will-change: transform;
+        /* --- 動態藝術背景 (動態流動感) --- */
+        .art-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 80%),
+                        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+            z-index: -1;
         }
 
-        /* --- 高級浮現動畫 --- */
-        .reveal { opacity: 0; transform: translateY(50px) scale(0.95); filter: blur(15px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        /* --- 旗艦級進場動畫 --- */
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(80px); filter: blur(20px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .reveal { opacity: 0; transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { animation: revealUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-        /* --- 奢華文字特效 --- */
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, var(--weixi-green), #ffffff);
+        /* --- 標題漸層與流光 --- */
+        .text-shimmer {
+            background: linear-gradient(to right, #ffffff, #10b981, #ffffff);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -51,10 +42,10 @@
         }
         @keyframes shimmer { to { background-position: 200% center; } }
 
-        /* --- 玻璃擬態卡片 --- */
+        /* --- 專業劑型卡片 (玻璃擬態) --- */
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(40px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 3rem;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -67,144 +58,195 @@
             border-color: var(--weixi-green);
             box-shadow: 0 40px 80px -20px rgba(0,0,0,0.8);
         }
-        .img-zoom { transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        .glass-card:hover .img-zoom { transform: scale(1.1); }
 
-        /* --- 亮點裝飾 --- */
-        .glow-point { position: absolute; background: var(--weixi-green); border-radius: 50%; filter: blur(100px); opacity: 0.1; z-index: 0; }
+        /* --- 滑鼠懸停光效 --- */
+        .glow-hover:hover {
+            box-shadow: 0 0 40px var(--glow);
+        }
+
+        /* --- 頁面裝飾球體 --- */
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+            animation: float 20s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 150px); }
+        }
     </style>
 </head>
 <body>
-    <div id="scroll-tracker"></div>
 
-    <nav class="fixed w-full z-[1000] px-10 py-6 transition-all duration-500" id="navbar">
+    <div id="scroll-tracker"></div>
+    <div class="art-bg"></div>
+    <div class="sphere bg-emerald-600" style="width: 600px; height: 600px; top: -10%; right: -5%;"></div>
+    <div class="sphere bg-green-900" style="width: 500px; height: 500px; bottom: 10%; left: -10%;"></div>
+
+    <nav class="fixed w-full z-[1000] px-8 py-8 transition-all duration-700" id="navbar">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center shadow-2xl">
-                    <span class="text-white font-black text-2xl font-['Montserrat']">W</span>
+            <div class="flex items-center gap-5">
+                <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center shadow-2xl group cursor-pointer hover:rotate-[360deg] transition-all duration-1000">
+                    <span class="text-white font-black text-2xl">W</span>
                 </div>
                 <div class="flex flex-col">
                     <span class="text-3xl font-black tracking-tighter text-white">薇璽生技</span>
                     <span class="text-[10px] font-bold tracking-[0.4em] text-emerald-500 uppercase leading-none mt-1">WEIXI BIOTECH</span>
                 </div>
             </div>
-            <div class="flex items-center gap-10">
-                <a href="mailto:coco334165@gmail.com" class="text-gray-400 hover:text-white transition-all text-2xl hidden lg:block"><i class="fas fa-envelope"></i></a>
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="bg-emerald-600 text-white px-10 py-3 rounded-full text-xs font-black tracking-widest hover:bg-emerald-500 transition-all shadow-xl">
+            <div class="flex items-center gap-8">
+                <a href="mailto:coco334165@gmail.com" class="text-gray-400 hover:text-white transition-all text-2xl hidden md:block">
+                    <i class="fas fa-envelope-open-text"></i>
+                </a>
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="bg-emerald-600 text-white px-8 py-3 rounded-full text-xs font-black tracking-widest hover:bg-emerald-500 hover:scale-110 active:scale-95 transition-all shadow-xl">
                     LINE 專業諮詢
                 </a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-wrap">
-        <div class="hero-bg" id="hero-bg"></div>
-        <div class="relative z-10 text-center px-6 reveal">
-            <h2 class="uppercase tracking-[1em] text-[10px] font-black mb-8 text-emerald-400 opacity-80">Extraction Science & OEM Expertise</h2>
-            <h1 class="text-6xl md:text-[9rem] font-black mb-10 leading-none text-gradient font-['Montserrat']">
-                WEIXI<br><span class="opacity-50 italic">BIOTECH</span>
+    <header class="min-h-screen flex items-center justify-center text-center px-6 relative overflow-hidden">
+        <div class="max-w-6xl reveal">
+            <h2 class="uppercase tracking-[1em] text-[10px] md:text-xs font-black mb-10 text-emerald-400 opacity-80 animate-pulse">
+                PURE EXTRACTION & BIOTECHNOLOGY
+            </h2>
+            <h1 class="text-7xl md:text-[11rem] font-black mb-12 leading-none text-shimmer font-['Montserrat']">
+                WEIXI<br><span class="opacity-60 font-light italic tracking-tight">APEX</span>
             </h1>
-            <h3 class="text-2xl md:text-4xl font-light tracking-[0.5em] text-gray-300 mb-16">薇璽生技：純粹萃取，定義品質</h3>
-            <div class="flex flex-col md:flex-row justify-center gap-8 items-center">
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="px-14 py-6 bg-emerald-600 rounded-2xl font-black text-sm tracking-widest hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] transition-all flex items-center gap-4">
-                    <i class="fab fa-line text-2xl"></i> 開始研發您的產品
+            <p class="text-2xl md:text-4xl font-light tracking-[0.4em] text-gray-400 mb-20 leading-relaxed">
+                醫學級純粹・定義品質巔峰
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <a href="https://line.me/ti/p/S4THqFVKxK" class="px-16 py-6 bg-emerald-600 rounded-3xl font-black text-sm tracking-widest hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] transition-all flex items-center gap-4 group">
+                    <i class="fab fa-line text-2xl"></i> 開始研發專案
+                </a>
+                <a href="#about" class="px-16 py-6 border border-white/10 rounded-3xl font-black text-sm tracking-widest hover:bg-white/5 transition-all">
+                    了解核心實力
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-40 px-6 container mx-auto max-w-7xl relative">
-        <div class="glow-point" style="width: 500px; height: 500px; top: 0; right: -10%;"></div>
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div class="reveal">
-                <h3 class="text-emerald-500 font-black tracking-widest text-xs uppercase mb-6">Our Philosophy</h3>
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-10 leading-tight">天然食品萃取<br><span class="text-emerald-400 underline underline-offset-[16px]">零西藥承諾</span></h2>
-                <p class="text-gray-400 text-xl font-light leading-relaxed mb-10">
-                    薇璽生技 WEIXI BIOTECH 專注於**高品質食品萃取技術**。我們嚴正承諾：全產品**無任何西藥成分添加**，並通過國家級最專業檢測認證。我們不僅是代工廠，更是您的專屬研發實驗室，協助客戶從零到一，打造獨一無二的品牌靈魂產品。
-                </p>
-                <div class="grid grid-cols-2 gap-10 pt-10 border-t border-white/10">
-                    <div>
-                        <span class="text-4xl font-black text-white">專業檢驗</span>
-                        <p class="text-[10px] text-gray-500 tracking-widest uppercase mt-2">最高規格認證</p>
-                    </div>
-                    <div>
-                        <span class="text-4xl font-black text-emerald-500">專屬研發</span>
-                        <p class="text-[10px] text-gray-500 tracking-widest uppercase mt-2">客製化品牌配方</p>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <img src="https://images.unsplash.com/photo-1550573104-4f964c3bc191?q=80&w=2070&auto=format&fit=crop" class="rounded-[4rem] shadow-2xl border border-white/10" alt="薇璽精密粉末研製">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-40 bg-black/40 px-6">
+    <section id="about" class="py-56 px-6 relative">
         <div class="container mx-auto max-w-7xl">
-            <div class="text-center mb-24 reveal">
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-6">專業劑型展示</h2>
-                <div class="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-12">
-                <div class="glass-card p-12 reveal">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-10 h-64 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2030&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="專業膠囊">
-                    </div>
-                    <h4 class="text-2xl font-black mb-4">專業膠囊填充</h4>
-                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">提供 HPMC 植物性與耐酸緩釋技術，完美避開胃酸破壞，精準釋放萃取精華。</p>
-                    <a href="capsules.html" class="text-xs font-black text-emerald-500 tracking-widest group">MORE DETAILS <i class="fas fa-arrow-right transition group-hover:translate-x-3"></i></a>
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="reveal">
+                    <h3 class="text-emerald-500 font-black tracking-widest text-xs uppercase mb-8">Professional Advantage</h3>
+                    <h2 class="text-6xl md:text-8xl font-black text-white mb-12 leading-[1.1]">
+                        全天然食品萃取<br><span class="text-emerald-400 underline underline-offset-[16px] decoration-emerald-900/50">零西藥承諾</span>
+                    </h2>
                 </div>
-                <div class="glass-card p-12 reveal">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-10 h-64 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="藥錠封膜">
+                <div class="reveal">
+                    <p class="text-gray-300 text-2xl font-light leading-relaxed mb-12">
+                        薇璽生技 WEIXI BIOTECH 專注於極致純淨的**食品萃取工藝**。我們嚴正宣示：所有配方**無任何西藥成分**，並通過國家級最專業檢測驗證。我們以醫學嚴謹度，為客戶開發具備獨特市場競爭力的客製化產品。
+                    </p>
+                    <div class="grid grid-cols-2 gap-10 pt-16 border-t border-white/10">
+                        <div>
+                            <span class="text-4xl font-black text-white block mb-2">最高檢驗</span>
+                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">符合國際檢測標準</span>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-black text-emerald-500 block mb-2">客製研發</span>
+                            <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">品牌專屬配方開發</span>
+                        </div>
                     </div>
-                    <h4 class="text-2xl font-black mb-4">精密藥錠封膜</h4>
-                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">高階 PTP 鋁箔封膜與膜衣工藝，確保錠劑穩定防潮，解決異味並提升適口性。</p>
-                    <a href="tablets.html" class="text-xs font-black text-blue-500 tracking-widest group">MORE DETAILS <i class="fas fa-arrow-right transition group-hover:translate-x-3"></i></a>
-                </div>
-                <div class="glass-card p-12 reveal">
-                    <div class="overflow-hidden rounded-[2.5rem] mb-10 h-64 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover img-zoom" alt="研磨粉狀">
-                    </div>
-                    <h4 class="text-2xl font-black mb-4">機能研磨粉狀</h4>
-                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">流動床速溶造粒技術，針對萃取粉末進行精密顆粒控制，口感絕佳且速溶性強。</p>
-                    <a href="powders.html" class="text-xs font-black text-amber-500 tracking-widest group">MORE DETAILS <i class="fas fa-arrow-right transition group-hover:translate-x-3"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-40 px-10 bg-black text-center relative overflow-hidden">
-        <div class="glow-point" style="width: 600px; height: 600px; bottom: -10%; left: -10%;"></div>
-        <div class="container mx-auto max-w-5xl reveal">
-            <h2 class="text-5xl font-black text-white mb-16">立即與薇璽建立聯繫</h2>
-            <div class="flex flex-col md:flex-row justify-center gap-10 mb-20">
-                <a href="https://line.me/ti/p/S4THqFVKxK" class="flex items-center justify-center gap-5 px-12 py-6 bg-emerald-600 rounded-3xl hover:bg-emerald-500 transition-all shadow-2xl group">
-                    <i class="fab fa-line text-4xl group-hover:rotate-[360deg] transition-all duration-1000"></i>
-                    <span class="text-xl font-black text-white">LINE 官方洽談</span>
-                </a>
-                <a href="mailto:coco334165@gmail.com" class="flex items-center justify-center gap-5 px-12 py-6 border border-white/10 rounded-3xl hover:bg-white/5 transition-all">
-                    <i class="fas fa-envelope text-3xl text-gray-400"></i>
-                    <span class="text-xl font-bold text-white leading-none">coco334165@gmail.com</span>
-                </a>
+    <section class="py-56 bg-white/[0.01] border-y border-white/5 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-40 reveal">
+                <h2 class="text-5xl md:text-9xl font-black text-white mb-10 opacity-5">EXPERTISE</h2>
+                <h3 class="text-4xl md:text-6xl font-black text-white">劑型製造方案</h3>
+                <div class="w-32 h-2 bg-emerald-600 mx-auto mt-12 rounded-full shadow-lg shadow-emerald-900"></div>
             </div>
-            <div class="pt-20 border-t border-white/5 flex flex-col items-center gap-4">
-                <span class="text-3xl font-black text-white tracking-tighter">薇璽生技 WEIXI <span class="text-emerald-500">BIOTECH</span></span>
-                <p class="text-[10px] text-gray-700 tracking-[0.5em] uppercase font-black">© 2026 WEIXI BIOTECH. ALL RIGHTS RESERVED.</p>
+
+            <div class="grid lg:grid-cols-3 gap-16">
+                <div class="glass-card p-16 reveal">
+                    <div class="text-emerald-500 text-6xl mb-12"><i class="fas fa-capsules"></i></div>
+                    <h4 class="text-3xl font-black text-white mb-6 uppercase tracking-tight">專業膠囊填充</h4>
+                    <p class="text-gray-500 text-lg font-light leading-relaxed mb-12">
+                        採用 HPMC 植物性耐酸技術，專為高活性萃取物設計，確保精華在體內精準釋放。
+                    </p>
+                    <div class="w-12 h-1 bg-emerald-600 rounded-full"></div>
+                </div>
+                <div class="glass-card p-16 reveal">
+                    <div class="text-blue-500 text-6xl mb-12"><i class="fas fa-pills"></i></div>
+                    <h4 class="text-3xl font-black text-white mb-6 uppercase tracking-tight">精密錠劑壓製</h4>
+                    <p class="text-gray-500 text-lg font-light leading-relaxed mb-12">
+                        高階膜衣防潮工藝與多層次緩釋劑型。完美解決異味，提升產品穩定度與質感。
+                    </p>
+                    <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
+                </div>
+                <div class="glass-card p-16 reveal">
+                    <div class="text-amber-500 text-6xl mb-12"><i class="fas fa-bolt"></i></div>
+                    <h4 class="text-3xl font-black text-white mb-6 uppercase tracking-tight">機能粉包造粒</h4>
+                    <p class="text-gray-500 text-lg font-light leading-relaxed mb-12">
+                        流動床速溶造粒。針對粉體顆粒進行精密控制，確保口感細膩、入口即化。
+                    </p>
+                    <div class="w-12 h-1 bg-amber-600 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-56 bg-black px-10 relative">
+        <div class="container mx-auto max-w-7xl reveal">
+            <div class="grid lg:grid-cols-2 gap-32 items-center text-left">
+                <div>
+                    <h2 class="text-6xl font-black text-white mb-12 leading-tight">定義您的<br><span class="text-emerald-500 underline underline-offset-8">品牌未來</span></h2>
+                    <p class="text-gray-500 text-2xl font-light mb-16 max-w-md italic">"品質是科學的唯一標準。"</p>
+                    
+                    <div class="flex flex-col gap-10">
+                        <a href="https://line.me/ti/p/S4THqFVKxK" class="flex items-center gap-10 group">
+                            <div class="w-24 h-24 bg-emerald-600 rounded-[2.5rem] flex items-center justify-center group-hover:rotate-[360deg] transition-all duration-1000 shadow-2xl">
+                                <i class="fab fa-line text-4xl text-white"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-emerald-500 tracking-[0.5em] font-black uppercase mb-2 block">Consultation</span>
+                                <div class="text-3xl font-black text-white border-b-2 border-emerald-900 group-hover:border-emerald-500 transition-all">點擊啟動 LINE 諮詢</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-10">
+                            <div class="w-24 h-24 bg-white/5 rounded-[2.5rem] flex items-center justify-center border border-white/10">
+                                <i class="fas fa-envelope text-3xl text-gray-500"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 tracking-[0.5em] font-black uppercase mb-2 block">Official Mail</span>
+                                <div class="text-3xl font-black text-white">coco334165@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="text-[12rem] font-black text-white/5 select-none leading-none text-right">WEIXI</div>
+                </div>
+            </div>
+            
+            <div class="pt-24 mt-40 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="flex items-center gap-6">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center font-black">W</div>
+                    <span class="text-2xl font-black text-white tracking-tighter uppercase">薇璽生技 WEIXI <span class="text-emerald-500">BIOTECH</span></span>
+                </div>
+                <p class="text-[10px] text-gray-800 font-black tracking-[0.8em] uppercase">© 2026 WEIXI BIOTECH. APEX OF BIOSCIENCE.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // 核心滾動引擎
+        // --- 核心動態腳本 ---
+
+        // 1. 進度條與滾動觸發
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const heroBg = document.getElementById('hero-bg');
-            heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
-
-            // 進度條
             const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // 進度條
             const progress = (scrolled / winHeight) * 100;
             document.getElementById('scroll-tracker').style.width = progress + '%';
 
@@ -213,22 +255,34 @@
             if (scrolled > 80) {
                 nav.style.background = 'rgba(3, 7, 18, 0.95)';
                 nav.style.backdropFilter = 'blur(15px)';
-                nav.style.padding = '15px 40px';
+                nav.style.padding = '20px 40px';
+                nav.style.boxShadow = '0 10px 40px rgba(0,0,0,0.5)';
             } else {
                 nav.style.background = 'transparent';
-                nav.style.padding = '24px 40px';
+                nav.style.padding = '32px 40px';
+                nav.style.boxShadow = 'none';
             }
         });
 
-        // 浮現引擎
+        // 2. 滾動偵測浮現 (Intersection Observer)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    // 性能優化：顯示後停止監聽
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 3. 初始載入動畫啟動
+        window.onload = () => {
+            setTimeout(() => {
+                document.querySelector('header .reveal').classList.add('active');
+            }, 300);
+        };
     </script>
 </body>
 </html>
